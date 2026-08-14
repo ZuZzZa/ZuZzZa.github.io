@@ -4,7 +4,10 @@
     "name": "Igor Grygorenko",
     "handle": "ZuZzZa",
     "github": "https://github.com/ZuZzZa",
-    "twitch": "https://twitch.tv/zuzzza",
+    "twitch": [
+      { "label": "Twitch · Games", "url": "https://www.twitch.tv/zuzzza_ua" },
+      { "label": "Twitch · IT", "url": "https://www.twitch.tv/notverywelltv" }
+    ],
     "linktree": "https://linktr.ee/zuzzza.me"
   },
   "projects": [

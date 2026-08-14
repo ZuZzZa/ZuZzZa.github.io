@@ -239,9 +239,10 @@ function projCard(p){
 }
 function homeView(){
   const per=DATA.person||{};
+  const twitchList=Array.isArray(per.twitch)?per.twitch:(per.twitch?[{label:'Twitch',url:per.twitch}]:[]);
   const links=[
     per.github?`<a class="btn" href="${esc(per.github)}" target="_blank" rel="noopener">${I.gh} GitHub</a>`:'',
-    per.twitch?`<a class="btn" href="${esc(per.twitch)}" target="_blank" rel="noopener">${I.twitch} Twitch</a>`:'',
+    ...twitchList.map(t=>`<a class="btn" href="${esc(t.url)}" target="_blank" rel="noopener">${I.twitch} ${esc(t.label||'Twitch')}</a>`),
     per.linktree?`<a class="btn" href="${esc(per.linktree)}" target="_blank" rel="noopener">${I.link} Links</a>`:''
   ].join('');
   return `
