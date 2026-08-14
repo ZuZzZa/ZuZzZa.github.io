@@ -16,7 +16,9 @@
       "icon": "hub",
       "tag": "solar + generator automation",
       "desc": "Automates and monitors a solar inverter and battery bank, and starts a backup generator on automatic scenarios. Its executing node is DomikAutoSlave.",
-      "hw": ["ESP32"],
+      "hw": [
+        "ESP32"
+      ],
       "releases": []
     },
     {
@@ -27,8 +29,48 @@
       "icon": "antenna",
       "tag": "generator RF bridge",
       "desc": "The executing node of DomikAuto: switches a backup generator over 433 MHz OOK (CC1101) and talks to the master over ESP-NOW. Web dashboard, OTA updates, optional TFT status screen.",
-      "hw": ["ESP32-WROOM-32", "TTGO T-Display"],
-      "releases": []
+      "hw": [
+        "ESP32-WROOM-32",
+        "TTGO T-Display"
+      ],
+      "releases": [
+        {
+          "version": "1.5.6",
+          "date": "2026-08-14",
+          "latest": true,
+          "notes": [
+            "[RF] Doubled the default Princeton TX burst duration 1500 ms → 3000 ms",
+            "[CI] Build workflow (.github/workflows/build.yml)",
+            "[CI] Release workflow (.github/workflows/release.yml)"
+          ],
+          "files": [
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.5.6_esp32wroom32.bin",
+              "path": "firmware/domikautoslave/v1.5.6/slave_v1.5.6_esp32wroom32.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.5.6_esp32wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.5.6/slave_v1.5.6_esp32wroom32_full.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.5.6_ttgo-t-display.bin",
+              "path": "firmware/domikautoslave/v1.5.6/slave_v1.5.6_ttgo-t-display.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.5.6_ttgo-t-display_full.bin",
+              "path": "firmware/domikautoslave/v1.5.6/slave_v1.5.6_ttgo-t-display_full.bin"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "bricklights",
@@ -38,7 +80,10 @@
       "icon": "bulb",
       "tag": "addressable LEGO lighting",
       "desc": "Lighting for LEGO builds — or anything else. Group addressable LEDs into zones, design per-zone animations, and run automatic scenarios by time or sunrise / sunset.",
-      "hw": ["ESP32", "WS2812"],
+      "hw": [
+        "ESP32",
+        "WS2812"
+      ],
       "releases": []
     },
     {
@@ -49,7 +94,9 @@
       "icon": "radio",
       "tag": "on-call presence light",
       "desc": "A presence indicator that pairs with MuteDesk: shows people around me whether I'm on a call or can't talk because my mic is live. Tracks call presence through the MuteDesk API.",
-      "hw": ["ESP32"],
+      "hw": [
+        "ESP32"
+      ],
       "releases": []
     }
   ]
