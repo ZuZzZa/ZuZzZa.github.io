@@ -77,8 +77,8 @@
     },
     {
       "id": "bricklights",
-      "name": "BrickLights",
-      "repo": "BrickLights",
+      "name": "BricksLights",
+      "repo": "BricksLights",
       "vis": "private",
       "icon": "bulb",
       "tag": "addressable LEGO lighting",
@@ -98,7 +98,7 @@
       "tag": "on-call presence light",
       "desc": "A presence indicator that pairs with MuteDesk: shows people around me whether I'm on a call or can't talk because my mic is live. Tracks call presence through the MuteDesk API.",
       "hw": [
-        "ESP32"
+        "ESP8266"
       ],
       "releases": []
     }

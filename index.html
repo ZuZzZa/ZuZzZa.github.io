@@ -200,7 +200,7 @@ const latestOf=(p)=>p.releases.find(r=>r.latest)||p.releases[0];
 
 /* ── live GitHub releases for public repos ── */
 function human(b){ if(!b&&b!==0) return ''; if(b>=1048576) return (b/1048576).toFixed(1)+' MB'; if(b>=1024) return Math.round(b/1024)+' KB'; return b+' B'; }
-function boardFromName(n){ n=n.toLowerCase(); if(n.includes('wroom')) return 'ESP32-WROOM-32'; if(n.includes('ttgo')) return 'TTGO T-Display'; return ''; }
+function boardFromName(n){ n=n.toLowerCase(); if(n.includes('wroom')) return 'ESP32-WROOM-32'; if(n.includes('ttgo')) return 'TTGO T-Display'; if(n.includes('d1mini')||n.includes('8266')||n.includes('8285')) return 'Wemos D1 mini'; if(n.includes('c3')) return 'ESP32-C3'; return ''; }
 function typeFromName(n){ if(/_full\.bin$/i.test(n)) return 'full'; if(/\.bin$/i.test(n)) return 'ota'; return 'file'; }
 function bodyToNotes(body){
   if(!body) return [];
