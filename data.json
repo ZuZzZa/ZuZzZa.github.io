@@ -5,8 +5,14 @@
     "handle": "ZuZzZa",
     "github": "https://github.com/ZuZzZa",
     "twitch": [
-      { "label": "Twitch · Games", "url": "https://www.twitch.tv/zuzzza_ua" },
-      { "label": "Twitch · IT", "url": "https://www.twitch.tv/notverywelltv" }
+      {
+        "label": "Twitch · Games",
+        "url": "https://www.twitch.tv/zuzzza_ua"
+      },
+      {
+        "label": "Twitch · IT",
+        "url": "https://www.twitch.tv/notverywelltv"
+      }
     ],
     "linktree": "https://linktr.ee/zuzzza.me"
   },
@@ -87,7 +93,39 @@
         "ESP32",
         "WS2812"
       ],
-      "releases": []
+      "releases": [
+        {
+          "version": "0.3.29",
+          "date": "2026-08-14",
+          "latest": true,
+          "notes": [
+            "CI: Automated firmware publishing — tagged releases now build the app, UI (LittleFS) and a full-flash image, and appear on the download site (zuzzza.github.io). No firmware behavior change since 0.3.28."
+          ],
+          "files": [
+            {
+              "board": "ESP32-C3",
+              "type": "ota",
+              "name": "BricksLights_v0.3.29_esp32c3.bin",
+              "size": "1.2 MB",
+              "path": "firmware/bricklights/v0.3.29/BricksLights_v0.3.29_esp32c3.bin"
+            },
+            {
+              "board": "ESP32-C3",
+              "type": "ota",
+              "name": "BricksLights_v0.3.29_esp32c3_littlefs.bin",
+              "size": "1.4 MB",
+              "path": "firmware/bricklights/v0.3.29/BricksLights_v0.3.29_esp32c3_littlefs.bin"
+            },
+            {
+              "board": "ESP32-C3",
+              "type": "full",
+              "name": "BricksLights_v0.3.29_esp32c3_full.bin",
+              "size": "3.9 MB",
+              "path": "firmware/bricklights/v0.3.29/BricksLights_v0.3.29_esp32c3_full.bin"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "onair",
