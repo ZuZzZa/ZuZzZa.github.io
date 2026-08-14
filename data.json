@@ -28,7 +28,32 @@
       "hw": [
         "ESP32"
       ],
-      "releases": []
+      "releases": [
+        {
+          "version": "1.5.62",
+          "date": "2026-08-14",
+          "latest": true,
+          "notes": [
+            "Data freshness age shown next to the on-screen \"Data:\" timestamp, colour-coded (dim under ~45 s, amber during backoff, red once stalled) so a frozen feed is obvious at a glance.",
+            "Web /api/status now exposes data_ts and data_age_s, and the dashboard shows a matching \"Data: <ts> · <age> ago\" line.",
+            "Disambiguates the two stall causes at last: a small age with a frozen timestamp means HA-side staleness; a large age means a Master/Wi-Fi poll stall."
+          ],
+          "files": [
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "ota",
+              "name": "master_v1.5.62_s3.bin",
+              "path": "firmware/domikauto/v1.5.62/master_v1.5.62_s3.bin"
+            },
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "full",
+              "name": "master_v1.5.62_s3_full.bin",
+              "path": "firmware/domikauto/v1.5.62/master_v1.5.62_s3_full.bin"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "domikautoslave",
