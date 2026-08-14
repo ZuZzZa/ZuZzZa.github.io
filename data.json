@@ -1,0 +1,56 @@
+{
+  "owner": "ZuZzZa",
+  "person": {
+    "name": "Igor Grygorenko",
+    "handle": "ZuZzZa",
+    "github": "https://github.com/ZuZzZa",
+    "twitch": "https://twitch.tv/zuzzza",
+    "linktree": "https://linktr.ee/zuzzza.me"
+  },
+  "projects": [
+    {
+      "id": "domikauto",
+      "name": "DomikAuto",
+      "repo": "DomikAuto",
+      "vis": "private",
+      "icon": "hub",
+      "tag": "solar + generator automation",
+      "desc": "Automates and monitors a solar inverter and battery bank, and starts a backup generator on automatic scenarios. Its executing node is DomikAutoSlave.",
+      "hw": ["ESP32"],
+      "releases": []
+    },
+    {
+      "id": "domikautoslave",
+      "name": "DomikAutoSlave",
+      "repo": "DomikAutoSlave",
+      "vis": "private",
+      "icon": "antenna",
+      "tag": "generator RF bridge",
+      "desc": "The executing node of DomikAuto: switches a backup generator over 433 MHz OOK (CC1101) and talks to the master over ESP-NOW. Web dashboard, OTA updates, optional TFT status screen.",
+      "hw": ["ESP32-WROOM-32", "TTGO T-Display"],
+      "releases": []
+    },
+    {
+      "id": "bricklights",
+      "name": "BrickLights",
+      "repo": "BrickLights",
+      "vis": "private",
+      "icon": "bulb",
+      "tag": "addressable LEGO lighting",
+      "desc": "Lighting for LEGO builds — or anything else. Group addressable LEDs into zones, design per-zone animations, and run automatic scenarios by time or sunrise / sunset.",
+      "hw": ["ESP32", "WS2812"],
+      "releases": []
+    },
+    {
+      "id": "onair",
+      "name": "OnAIR",
+      "repo": "OnAIR",
+      "vis": "public",
+      "icon": "radio",
+      "tag": "on-call presence light",
+      "desc": "A presence indicator that pairs with MuteDesk: shows people around me whether I'm on a call or can't talk because my mic is live. Tracks call presence through the MuteDesk API.",
+      "hw": ["ESP32"],
+      "releases": []
+    }
+  ]
+}
