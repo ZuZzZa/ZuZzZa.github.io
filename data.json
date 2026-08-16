@@ -113,9 +113,36 @@
       ],
       "releases": [
         {
+          "version": "1.6.0",
+          "date": "2026-08-16",
+          "latest": true,
+          "notes": [
+            "Requires Master fw >= v1.5.66 for HTTP-fallback commands (older Masters",
+            "OTA update path: POST the firmware .bin to",
+            "Fresh flash: pio run -e <env> -t upload, or flash the _full release",
+            "[Security] HTTP Basic auth on state-changing endpoints (web_server.c)",
+            "[Security] Per-device AP-fallback password + bounded window",
+            "[Security] OTA image validation before flashing (web_server.c)"
+          ],
+          "files": [
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.6.0_ttgo.bin",
+              "path": "firmware/domikautoslave/v1.6.0/slave_v1.6.0_ttgo.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.6.0_wroom32.bin",
+              "path": "firmware/domikautoslave/v1.6.0/slave_v1.6.0_wroom32.bin"
+            }
+          ]
+        },
+        {
           "version": "1.5.6",
           "date": "2026-08-14",
-          "latest": true,
+          "latest": false,
           "notes": [
             "[RF] Doubled the default Princeton TX burst duration 1500 ms → 3000 ms",
             "[CI] Build workflow (.github/workflows/build.yml)",
