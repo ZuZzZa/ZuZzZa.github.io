@@ -113,9 +113,44 @@
       ],
       "releases": [
         {
-          "version": "1.6.0",
+          "version": "1.6.1",
           "date": "2026-08-16",
           "latest": true,
+          "notes": [
+            "[API] Battery state in GET /api/status (web_server.c, web_server.h,",
+            "[UI] Vector boot logo on the TTGO T-Display (display.c)"
+          ],
+          "files": [
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.6.1_esp32wroom32.bin",
+              "path": "firmware/domikautoslave/v1.6.1/slave_v1.6.1_esp32wroom32.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.6.1_esp32wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.6.1/slave_v1.6.1_esp32wroom32_full.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.6.1_ttgo-t-display.bin",
+              "path": "firmware/domikautoslave/v1.6.1/slave_v1.6.1_ttgo-t-display.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.6.1_ttgo-t-display_full.bin",
+              "path": "firmware/domikautoslave/v1.6.1/slave_v1.6.1_ttgo-t-display_full.bin"
+            }
+          ]
+        },
+        {
+          "version": "1.6.0",
+          "date": "2026-08-16",
+          "latest": false,
           "notes": [
             "Requires Master fw >= v1.5.66 for HTTP-fallback commands (older Masters",
             "OTA update path: POST the firmware .bin to",
