@@ -136,6 +136,18 @@
               "type": "ota",
               "name": "slave_v1.6.0_wroom32.bin",
               "path": "firmware/domikautoslave/v1.6.0/slave_v1.6.0_wroom32.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.6.0_ttgo_full.bin",
+              "path": "firmware/domikautoslave/v1.6.0/slave_v1.6.0_ttgo_full.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.6.0_wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.6.0/slave_v1.6.0_wroom32_full.bin"
             }
           ]
         },
