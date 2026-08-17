@@ -113,9 +113,46 @@
       ],
       "releases": [
         {
+          "version": "1.6.2",
+          "date": "2026-08-17",
+          "latest": true,
+          "notes": [
+            "**[API] POST /api/cmd/rf no longer answers 200 when nothing is",
+            "[API] dur_ms is now validated; allowed maximum raised to 5000 ms",
+            "[RF] Transmit paths serialised by a mutex so the web-API, ESP-NOW command",
+            "[Diag] reset_reason field (esp_reset_reason()) added to"
+          ],
+          "files": [
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.6.2_esp32wroom32.bin",
+              "path": "firmware/domikautoslave/v1.6.2/slave_v1.6.2_esp32wroom32.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.6.2_esp32wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.6.2/slave_v1.6.2_esp32wroom32_full.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.6.2_ttgo-t-display.bin",
+              "path": "firmware/domikautoslave/v1.6.2/slave_v1.6.2_ttgo-t-display.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.6.2_ttgo-t-display_full.bin",
+              "path": "firmware/domikautoslave/v1.6.2/slave_v1.6.2_ttgo-t-display_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.6.1",
           "date": "2026-08-16",
-          "latest": true,
+          "latest": false,
           "notes": [
             "[API] Battery state in GET /api/status (web_server.c, web_server.h,",
             "[UI] Vector boot logo on the TTGO T-Display (display.c)"
