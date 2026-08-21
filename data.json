@@ -364,7 +364,15 @@
       "photos": [
         {
           "src": "assets/devices/onair/01.jpg",
-          "alt": "OnAIR sign lit up, mounted on the wall"
+          "alt": "Idle — no call in progress"
+        },
+        {
+          "src": "assets/devices/onair/02.jpg",
+          "alt": "On a call, microphone muted"
+        },
+        {
+          "src": "assets/devices/onair/03.gif",
+          "alt": "On a call with the mic live — the sign blinks"
         }
       ],
       "hw": [
