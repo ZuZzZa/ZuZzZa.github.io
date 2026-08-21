@@ -36,7 +36,24 @@
         "Web dashboard + /api/status JSON for Home Assistant",
         "Over-the-air firmware updates"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "src": "assets/devices/domikauto/01.jpg",
+          "alt": "Main screen — battery, grid and slave status at a glance"
+        },
+        {
+          "src": "assets/devices/domikauto/02.jpg",
+          "alt": "Automation engine — rules and current state"
+        },
+        {
+          "src": "assets/devices/domikauto/03.jpg",
+          "alt": "Manual generator control and SSR power routing"
+        },
+        {
+          "src": "assets/devices/domikauto/04.jpg",
+          "alt": "Domik Control — the web dashboard"
+        }
+      ],
       "hw": [
         "ESP32"
       ],
