@@ -96,6 +96,74 @@
   .hw{display:flex;flex-wrap:wrap;gap:6px;}
   .hw .chip{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:6px;background:var(--panel-2);color:var(--muted);border:1px solid var(--line);}
 
+  /* ── home teaser ── */
+  .teaser{position:relative;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 22px;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.18s;
+    background:linear-gradient(120deg,rgba(139,92,246,.10),rgba(230,89,214,.05)),var(--panel);}
+  .teaser::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;opacity:0;transition:.2s;background:linear-gradient(140deg,var(--violet),var(--magenta));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}
+  .teaser:hover{transform:translateY(-2px);box-shadow:var(--glow);}
+  .teaser:hover::before{opacity:1;}
+  .t-icons{display:flex;flex:none;}
+  .t-icons .dev{width:46px;height:46px;margin-right:-12px;background:radial-gradient(circle at 30% 20%,rgba(139,92,246,.34),rgba(230,89,214,.14)),var(--panel);}
+  .t-icons .dev:last-child{margin-right:0;}
+  .t-body{flex:1;min-width:220px;}
+  .t-body h3{font-size:18px;letter-spacing:-.01em;}
+  .t-body p{margin:5px 0 0;color:var(--muted);font-size:14.5px;}
+  .t-body .names{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:7px;}
+
+  /* ── device catalog ── */
+  .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding-bottom:40px;}
+  .dcard{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.18s;}
+  .dcard:hover{transform:translateY(-3px);box-shadow:var(--glow);border-color:var(--line-2);}
+  .shot{position:relative;aspect-ratio:16/10;background:var(--bg-2);overflow:hidden;border-bottom:1px solid var(--line);}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .25s;}
+  .dcard:hover .shot img{filter:brightness(1.07) saturate(1.06);}
+  .shot .ontop{position:absolute;top:11px;left:11px;z-index:2;}
+  .shot .cnt{position:absolute;bottom:11px;right:11px;z-index:2;font-family:var(--mono);font-size:11px;padding:3px 8px;border-radius:999px;color:var(--muted);background:color-mix(in srgb,var(--bg) 74%,transparent);border:1px solid var(--line-2);}
+  .ph{width:100%;height:100%;display:grid;place-items:center;gap:8px;align-content:center;color:var(--violet-2);
+    background-image:linear-gradient(rgba(139,92,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.06) 1px,transparent 1px);background-size:22px 22px;}
+  .ph svg{width:38px;height:38px;opacity:.75;}
+  .ph span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);}
+  .dbody{display:flex;flex-direction:column;gap:11px;padding:17px 19px 19px;flex:1;}
+  .dbody h3{font-size:18.5px;letter-spacing:-.01em;}
+  .dbody .tag{color:var(--faint);font-size:13px;font-family:var(--mono);margin-top:2px;}
+  .dbody p{color:var(--muted);font-size:14px;margin:0;flex:1;}
+
+  /* ── device page ── */
+  .d-head{padding-bottom:8px;}
+  .d-head .row{display:flex;gap:16px;align-items:flex-start;}
+  .d-head h1{font-size:clamp(26px,4vw,38px);font-weight:780;letter-spacing:-.02em;}
+  .d-head .tag{color:var(--faint);font-family:var(--mono);font-size:14px;margin-top:4px;}
+  .car{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg-2);margin-top:22px;}
+  .car .track{display:flex;transition:transform .38s cubic-bezier(.4,0,.2,1);}
+  .car .slide{flex:0 0 100%;aspect-ratio:16/9;}
+  .car .slide img{width:100%;height:100%;object-fit:cover;display:block;}
+  .car .nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--text);
+    background:color-mix(in srgb,var(--bg) 66%,transparent);border:1px solid var(--line-2);backdrop-filter:blur(8px);transition:.15s;}
+  .car .nav:hover{border-color:var(--violet);color:var(--violet-2);}
+  .car .nav svg{width:16px;height:16px;}
+  .car .prev{left:12px;} .car .next{right:12px;}
+  .car .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:13px;color:var(--text);
+    background:linear-gradient(transparent,rgba(7,6,12,.85));}
+  .car .cnt{position:absolute;top:12px;right:12px;font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:999px;color:var(--muted);background:color-mix(in srgb,var(--bg) 72%,transparent);border:1px solid var(--line-2);}
+  .dots{display:flex;gap:7px;justify-content:center;margin-top:12px;}
+  .dots i{width:7px;height:7px;border-radius:999px;background:var(--line-2);cursor:pointer;transition:.18s;}
+  .dots i.on{width:22px;background:linear-gradient(140deg,var(--violet),var(--magenta));}
+  .thumbs{display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px;}
+  .thumbs button{flex:0 0 92px;height:58px;padding:0;border-radius:9px;overflow:hidden;cursor:pointer;background:var(--bg-2);border:1px solid var(--line);opacity:.55;transition:.15s;}
+  .thumbs button.on{opacity:1;border-color:var(--violet);}
+  .thumbs img{width:100%;height:100%;object-fit:cover;display:block;}
+  .d-about{margin-top:34px;max-width:70ch;}
+  .d-about p{color:var(--muted);margin:0 0 14px;}
+  .d-about p:first-of-type{color:var(--text);font-size:17px;}
+  .feats{list-style:none;display:grid;gap:9px;margin:18px 0 0;padding:0;}
+  .feats li{position:relative;padding-left:24px;color:var(--muted);font-size:14.5px;}
+  .feats li::before{content:"▸";position:absolute;left:4px;top:-1px;color:var(--magenta);}
+  .fwcta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:34px 0 10px;padding:19px 21px;border:1px solid var(--line-2);border-radius:16px;
+    background:linear-gradient(120deg,rgba(139,92,246,.12),rgba(230,89,214,.06)),var(--panel);}
+  .fwcta .fw-b{flex:1;min-width:220px;}
+  .fwcta h3{font-size:16.5px;}
+  .fwcta p{margin:4px 0 0;color:var(--muted);font-size:14px;}
+
   .back{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:13px;color:var(--muted);margin:34px 0 20px;transition:.15s;}
   .back:hover{color:var(--violet-2);}
   .back svg{width:15px;height:15px;}
@@ -169,6 +237,7 @@
     </a>
     <nav class="links" id="nav">
       <a href="#/" data-r="home">~/about</a>
+      <a href="#/devices" data-r="dev">~/devices</a>
       <a href="#/firmware" data-r="fw">~/firmware</a>
     </nav>
   </div>
@@ -188,6 +257,7 @@ const I={
   back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
   dl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>',
   chip:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/></svg>',
+  board:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>',
   up:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8M8 12l4-4 4 4M6 4h12"/></svg>',
   gh:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>',
   link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',
@@ -251,9 +321,9 @@ function homeView(){
     <div class="eyebrow">Delivery &amp; Project Manager · Maker</div>
     <h1>I ship projects by day,<br><span class="hl">build devices</span> by night.</h1>
     <div class="role">// MSc Robotics &amp; AI · <b>ESP32</b> · web dev · 3D print · Twitch</div>
-    <p class="lead">I'm <b>Igor Grygorenko</b> (ZuZzZa) — MSc in Robotics &amp; AI from Igor Sikorsky KPI. By day I lead delivery as a Project / Delivery Manager; off the clock I build embedded gadgets, do web development, and design &amp; 3D-print hardware. I also stream on Twitch (currently on pause). This is home base — about me here, firmware for my devices on the next tab.</p>
+    <p class="lead">I'm <b>Igor Grygorenko</b> (ZuZzZa) — MSc in Robotics &amp; AI from Igor Sikorsky KPI. By day I lead delivery as a Project / Delivery Manager; off the clock I build embedded gadgets, do web development, and design &amp; 3D-print hardware. I also stream on Twitch (currently on pause). This is home base — about me here, my devices and their firmware on the next tabs.</p>
     <div class="cta-row">
-      <a class="btn pri" href="#/firmware">${I.up} Get firmware</a>
+      <a class="btn pri" href="#/devices">${I.board} My devices</a>
       ${links}
     </div>
     <div class="stats">
@@ -263,8 +333,96 @@ function homeView(){
       <div class="stat"><div class="n">3D</div><div class="l">model &amp; print</div></div>
     </div>
   </section>
-  <div class="sec-h"><span class="idx">01</span><h2>Devices</h2><span class="rule"></span><a class="go" href="#/firmware">all firmware ${I.arrow}</a></div>
-  <section class="grid">${DATA.projects.map(projCard).join('')}</section>`;
+  <div class="sec-h"><span class="idx">01</span><h2>Devices</h2><span class="rule"></span></div>
+  <a class="teaser" href="#/devices">
+    <div class="t-icons">${DATA.projects.slice(0,4).map(p=>`<div class="dev">${I[p.icon]||I.chip}</div>`).join('')}</div>
+    <div class="t-body">
+      <h3>${DATA.projects.length} ESP32 devices I build</h3>
+      <p>Photos, what each one does, and the firmware to flash it.</p>
+      <div class="names">${DATA.projects.map(p=>esc(p.name)).join(' · ')}</div>
+    </div>
+    <span class="go">browse devices ${I.arrow}</span>
+  </a>`;
+}
+/* ── devices ── */
+function photoOf(p,i){ const ph=Array.isArray(p.photos)?p.photos:[]; const x=ph[i||0]; if(!x) return null; return typeof x==='string'?{src:x,alt:p.name}:{src:x.src,alt:x.alt||p.name}; }
+function shot(p){
+  const f=photoOf(p,0); const n=(p.photos||[]).length;
+  const lr=latestOf(p);
+  const badge=lr?`<span class="pill latest ontop"><span class="d"></span>v${esc(lr.version)}</span>`
+    :(p.vis==="public"?`<span class="pill pub ontop"><span class="d"></span>public</span>`:`<span class="pill soon ontop">coming soon</span>`);
+  const inner=f?`<img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy">`
+    :`<div class="ph">${I[p.icon]||I.chip}<span>photo soon</span></div>`;
+  return `<div class="shot">${badge}${inner}${n>1?`<span class="cnt">${n} photos</span>`:''}</div>`;
+}
+function devCard(p){
+  return `<a class="dcard" href="#/d/${p.id}">${shot(p)}
+    <div class="dbody">
+      <div><h3>${esc(p.name)}</h3><div class="tag">${esc(p.tag)}</div></div>
+      <p>${esc(p.desc)}</p>
+      <div class="hw">${p.hw.map(h=>`<span class="chip">${esc(h)}</span>`).join('')}</div>
+      <div class="foot"><span></span><span class="go">open ${I.arrow}</span></div>
+    </div></a>`;
+}
+function devicesView(){
+  return `
+  <div class="sec-h" style="margin-top:44px"><span class="idx">~/devices</span><h2>Devices I build</h2><span class="rule"></span></div>
+  <p style="color:var(--muted);max-width:62ch;margin:0 0 8px">Small ESP32 gadgets I design, print and solder at home. Open a device to see the photos and what it does — firmware and update guides live on their own page.</p>
+  <section class="dgrid" style="padding-top:20px">${DATA.projects.map(devCard).join('')}</section>`;
+}
+function deviceView(id){
+  const p=DATA.projects.find(x=>x.id===id); if(!p){location.hash='#/devices';return '';}
+  const ph=(p.photos||[]).map((_,i)=>photoOf(p,i));
+  const lr=latestOf(p);
+  const badge=lr?`<span class="pill latest"><span class="d"></span>latest v${esc(lr.version)}</span>`
+    :(p.vis==="public"?`<span class="pill pub"><span class="d"></span>public repo</span>`:`<span class="pill soon">coming soon</span>`);
+  const car=ph.length?`
+    <div class="car" data-car>
+      <div class="track">${ph.map(f=>`<div class="slide"><img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy"></div>`).join('')}</div>
+      ${ph.length>1?`<button class="nav prev" data-dir="-1" aria-label="Previous photo">${I.back}</button>
+      <button class="nav next" data-dir="1" aria-label="Next photo">${I.arrow}</button>
+      <span class="cnt"><b data-cur>1</b>/${ph.length}</span>`:''}
+      ${ph[0].alt&&ph[0].alt!==p.name?`<div class="cap" data-cap>${esc(ph[0].alt)}</div>`:''}
+    </div>
+    ${ph.length>1?`<div class="dots">${ph.map((_,i)=>`<i class="${i?'':'on'}" data-go="${i}"></i>`).join('')}</div>
+    <div class="thumbs">${ph.map((f,i)=>`<button class="${i?'':'on'}" data-go="${i}"><img src="${esc(f.src)}" alt="" loading="lazy"></button>`).join('')}</div>`:''}`
+  :`<div class="car"><div class="slide" style="aspect-ratio:16/9"><div class="ph">${I[p.icon]||I.chip}<span>photos coming soon</span></div></div></div>`;
+  const about=(p.long&&p.long.length?p.long:[p.desc]).map(t=>`<p>${esc(t)}</p>`).join('');
+  return `
+  <a class="back" href="#/devices">${I.back} ~/devices</a>
+  <div class="d-head"><div class="row"><div class="dev" style="width:56px;height:56px;border-radius:14px">${I[p.icon]||I.chip}</div>
+    <div><h1>${esc(p.name)}</h1><div class="tag">${esc(p.tag)}</div>
+      <div class="p-meta">${badge}<div class="hw">${p.hw.map(h=>`<span class="chip">${esc(h)}</span>`).join('')}</div></div>
+    </div></div>
+  </div>
+  ${car}
+  <div class="d-about">${about}
+    ${p.features&&p.features.length?`<ul class="feats">${p.features.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>`:''}
+  </div>
+  <div class="fwcta"><div class="dev" style="flex:none">${I.up}</div>
+    <div class="fw-b"><h3>Firmware &amp; updates</h3>
+      <p>${lr?`Latest build is <b style="color:var(--text)">v${esc(lr.version)}</b> — downloads, changelog and the step-by-step update guide.`:'Downloads, changelog and the step-by-step update guide.'}</p></div>
+    <a class="btn pri" href="#/p/${p.id}">${I.dl} Get firmware</a>
+  </div>`;
+}
+function initCar(app){
+  const car=app.querySelector('[data-car]'); if(!car) return;
+  const track=car.querySelector('.track'); const n=track.children.length; if(n<2) return;
+  const dots=app.querySelectorAll('.dots i'); const thumbs=app.querySelectorAll('.thumbs button');
+  const cur=car.querySelector('[data-cur]'); const cap=car.querySelector('[data-cap]');
+  const alts=[...track.querySelectorAll('img')].map(i=>i.alt);
+  let i=0;
+  const go=(k)=>{ i=(k%n+n)%n; track.style.transform=`translateX(${-i*100}%)`;
+    dots.forEach((d,j)=>d.classList.toggle('on',j===i)); thumbs.forEach((t,j)=>t.classList.toggle('on',j===i));
+    if(cur) cur.textContent=i+1; if(cap) cap.textContent=alts[i]||''; };
+  car.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>go(i+ +b.dataset.dir)));
+  [...dots,...thumbs].forEach(el=>el.addEventListener('click',()=>go(+el.dataset.go)));
+  document.addEventListener('keydown',(e)=>{ if(!document.body.contains(car))return;
+    if(e.key==='ArrowLeft')go(i-1); if(e.key==='ArrowRight')go(i+1); });
+  let x0=null;
+  car.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
+  car.addEventListener('touchend',e=>{ if(x0===null)return; const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40) go(i+(dx<0?1:-1)); x0=null; },{passive:true});
 }
 function firmwareView(){
   return `
@@ -320,8 +478,11 @@ function projectView(id){
 }
 function setNav(r){document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.r===r));}
 function render(){
-  const app=document.getElementById('app');const h=location.hash||'#/';const m=h.match(/^#\/p\/(.+)$/);
+  const app=document.getElementById('app');const h=location.hash||'#/';
+  const m=h.match(/^#\/p\/(.+)$/); const dm=h.match(/^#\/d\/(.+)$/);
   if(m){app.innerHTML=projectView(m[1]);setNav('fw');}
+  else if(dm){app.innerHTML=deviceView(dm[1]);setNav('dev');initCar(app);}
+  else if(h==='#/devices'){app.innerHTML=devicesView();setNav('dev');}
   else if(h==='#/firmware'){app.innerHTML=firmwareView();setNav('fw');}
   else{app.innerHTML=homeView();setNav('home');}
   window.scrollTo(0,0);

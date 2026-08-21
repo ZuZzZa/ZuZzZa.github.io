@@ -25,6 +25,18 @@
       "icon": "hub",
       "tag": "solar + generator automation",
       "desc": "Automates and monitors a solar inverter and battery bank, and starts a backup generator on automatic scenarios. Its executing node is DomikAutoSlave.",
+      "long": [
+        "DomikAuto is the brain of an off-grid power setup. It polls the solar inverter and battery bank, keeps a live picture of production, load and state of charge, and shows all of it on a 7\" touch screen that sits on the wall.",
+        "When the batteries run low or the grid stays down for too long, it starts the backup generator by itself through DomikAutoSlave, and shuts it down once the bank is topped up again. Everything is also exposed over a web dashboard and a JSON API, so Home Assistant can read the same numbers."
+      ],
+      "features": [
+        "7\" touch dashboard with live inverter, battery and load readings",
+        "Automatic generator start / stop scenarios",
+        "ESP-NOW link to the DomikAutoSlave executing node",
+        "Web dashboard + /api/status JSON for Home Assistant",
+        "Over-the-air firmware updates"
+      ],
+      "photos": [],
       "hw": [
         "ESP32"
       ],
@@ -107,6 +119,18 @@
       "icon": "antenna",
       "tag": "generator RF bridge",
       "desc": "The executing node of DomikAuto: switches a backup generator over 433 MHz OOK (CC1101) and talks to the master over ESP-NOW. Web dashboard, OTA updates, optional TFT status screen.",
+      "long": [
+        "DomikAutoSlave is the hand that pulls the lever. It receives commands from DomikAuto over ESP-NOW and translates them into 433 MHz OOK bursts through a CC1101 radio — the same signal the generator's own remote sends.",
+        "It runs standalone too: a small web dashboard lets you fire commands manually, and the optional TFT build shows link state, battery and the last command right on the device."
+      ],
+      "features": [
+        "433 MHz OOK (CC1101) generator control",
+        "ESP-NOW link to the master, with HTTP fallback",
+        "Web dashboard with HTTP Basic auth on state-changing endpoints",
+        "Optional TTGO T-Display status screen",
+        "OTA updates with image validation"
+      ],
+      "photos": [],
       "hw": [
         "ESP32-WROOM-32",
         "TTGO T-Display"
@@ -269,6 +293,18 @@
       "icon": "bulb",
       "tag": "addressable LEGO lighting",
       "desc": "Lighting for LEGO builds — or anything else. Group addressable LEDs into zones, design per-zone animations, and run automatic scenarios by time or sunrise / sunset.",
+      "long": [
+        "BricksLights turns a strip of addressable LEDs into lighting for LEGO builds — or for a shelf, a desk, a diorama. Group the LEDs into zones, give every zone its own animation, and control it all from the browser.",
+        "Scenarios run on their own: switch scenes by the clock or follow local sunrise and sunset, so the build lights itself up when the room gets dark."
+      ],
+      "features": [
+        "Zones over a single WS2812 strip",
+        "Per-zone animations and colours",
+        "Time-based and sunrise / sunset scenarios",
+        "Browser UI served straight from the device (LittleFS)",
+        "OTA updates"
+      ],
+      "photos": [],
       "hw": [
         "ESP32",
         "WS2812"
@@ -315,6 +351,22 @@
       "icon": "radio",
       "tag": "on-call presence light",
       "desc": "A presence indicator that pairs with MuteDesk: shows people around me whether I'm on a call or can't talk because my mic is live. Tracks call presence through the MuteDesk API.",
+      "long": [
+        "OnAIR is a presence light for a home office. It pairs with MuteDesk, tracks whether a call is running and whether the mic is live, and shows the room a clear signal before anyone opens the door.",
+        "The source is public — the firmware and its releases live on GitHub."
+      ],
+      "features": [
+        "On-call / mic-live presence indication",
+        "Talks to the MuteDesk API",
+        "Compact ESP8266 build",
+        "Open source, releases published on GitHub"
+      ],
+      "photos": [
+        {
+          "src": "assets/devices/onair/01.jpg",
+          "alt": "OnAIR sign lit up, mounted on the wall"
+        }
+      ],
       "hw": [
         "ESP8266"
       ],
