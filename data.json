@@ -334,7 +334,16 @@
         "Browser UI served straight from the device (LittleFS)",
         "OTA updates"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "src": "assets/devices/bricklights/01.jpg",
+          "alt": "LEGO Rivendell lit by zone animations in the dark"
+        },
+        {
+          "src": "assets/devices/bricklights/02.jpg",
+          "alt": "The same build by daylight — LEDs hidden inside"
+        }
+      ],
       "hw": [
         "ESP32",
         "WS2812"

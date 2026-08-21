@@ -102,9 +102,18 @@
   .teaser::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;opacity:0;transition:.2s;background:linear-gradient(140deg,var(--violet),var(--magenta));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;}
   .teaser:hover{transform:translateY(-2px);box-shadow:var(--glow);}
   .teaser:hover::before{opacity:1;}
-  .t-icons{display:flex;flex:none;}
-  .t-icons .dev{width:46px;height:46px;margin-right:-12px;background:radial-gradient(circle at 30% 20%,rgba(139,92,246,.34),rgba(230,89,214,.14)),var(--panel);}
-  .t-icons .dev:last-child{margin-right:0;}
+  .t-shots{display:flex;flex:none;}
+  .t-shots .sh{width:118px;height:74px;border-radius:11px;overflow:hidden;flex:none;margin-right:-18px;border:1px solid var(--line-2);background:var(--bg-2);box-shadow:0 4px 14px rgba(0,0,0,.5);position:relative;transition:.16s;}
+  .teaser:hover .t-shots .sh{margin-right:-8px;}
+  .t-shots .sh:hover{transform:translateY(-3px) scale(1.06);z-index:9!important;}
+  .t-shots .sh:nth-child(1){z-index:4;} .t-shots .sh:nth-child(2){z-index:3;}
+  .t-shots .sh:nth-child(3){z-index:2;} .t-shots .sh:nth-child(4){z-index:1;}
+  .t-shots .sh:last-child{margin-right:0;}
+  .t-shots img{width:100%;height:100%;object-fit:cover;display:block;}
+  .t-shots .sh .mini{width:100%;height:100%;display:grid;place-items:center;color:var(--violet-2);background:radial-gradient(circle at 30% 20%,rgba(139,92,246,.30),rgba(230,89,214,.12));}
+  .t-shots .sh .mini svg{width:22px;height:22px;}
+  .teaser:hover .t-shots .sh{border-color:var(--violet);}
+  @media (max-width:560px){.t-shots .sh{width:72px;height:46px;margin-right:-12px;}}
   .t-body{flex:1;min-width:220px;}
   .t-body h3{font-size:18px;letter-spacing:-.01em;}
   .t-body p{margin:5px 0 0;color:var(--muted);font-size:14.5px;}
@@ -335,7 +344,10 @@ function homeView(){
   </section>
   <div class="sec-h"><span class="idx">01</span><h2>Devices</h2><span class="rule"></span></div>
   <a class="teaser" href="#/devices">
-    <div class="t-icons">${DATA.projects.slice(0,4).map(p=>`<div class="dev">${I[p.icon]||I.chip}</div>`).join('')}</div>
+    <div class="t-shots">${DATA.projects.slice(0,4).map(p=>{
+      const f=photoOf(p,0);
+      return `<span class="sh">${f?`<img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy">`:`<span class="mini">${I[p.icon]||I.chip}</span>`}</span>`;
+    }).join('')}</div>
     <div class="t-body">
       <h3>${DATA.projects.length} ESP32 devices I build</h3>
       <p>Photos, what each one does, and the firmware to flash it.</p>
