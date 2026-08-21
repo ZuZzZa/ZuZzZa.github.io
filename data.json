@@ -147,7 +147,20 @@
         "Optional TTGO T-Display status screen",
         "OTA updates with image validation"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "src": "assets/devices/domikautoslave/01.jpg",
+          "alt": "Mounted by the generator — status screen and 433 MHz antenna"
+        },
+        {
+          "src": "assets/devices/domikautoslave/02.jpg",
+          "alt": "TTGO T-Display status screen up close"
+        },
+        {
+          "src": "assets/devices/domikautoslave/03.jpg",
+          "alt": "Inside the 3D-printed case — ESP32, CC1101 and the manual override switch"
+        }
+      ],
       "hw": [
         "ESP32-WROOM-32",
         "TTGO T-Display"
