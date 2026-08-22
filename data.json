@@ -442,7 +442,20 @@
         "Menu bar app that supervises the daemon; no terminal needed",
         "Self-fitting ceilings, with unfitted ones left undisplayed rather than guessed"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "src": "assets/devices/claude-usage-meter/01.png",
+          "alt": "Gauges page - the 5-hour, weekly and weekly-Fable ceilings, with burn rate and time to the next limit"
+        },
+        {
+          "src": "assets/devices/claude-usage-meter/02.png",
+          "alt": "Breakdown page - the week's spend split by model and by project"
+        },
+        {
+          "src": "assets/devices/claude-usage-meter/03.png",
+          "alt": "Standby - the panel becomes a clock while the Mac sleeps"
+        }
+      ],
       "hw": [
         "Arduino Mega 1280/2560",
         "3.2\" 480x320 TFT",
