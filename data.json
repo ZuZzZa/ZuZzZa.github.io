@@ -6,11 +6,11 @@
     "github": "https://github.com/ZuZzZa",
     "twitch": [
       {
-        "label": "Twitch · Games",
+        "label": "Twitch \u00b7 Games",
         "url": "https://www.twitch.tv/zuzzza_ua"
       },
       {
-        "label": "Twitch · IT",
+        "label": "Twitch \u00b7 IT",
         "url": "https://www.twitch.tv/notverywelltv"
       }
     ],
@@ -39,11 +39,11 @@
       "photos": [
         {
           "src": "assets/devices/domikauto/01.jpg",
-          "alt": "Main screen — battery, grid and slave status at a glance"
+          "alt": "Main screen \u2014 battery, grid and slave status at a glance"
         },
         {
           "src": "assets/devices/domikauto/02.jpg",
-          "alt": "Automation engine — rules and current state"
+          "alt": "Automation engine \u2014 rules and current state"
         },
         {
           "src": "assets/devices/domikauto/03.jpg",
@@ -51,7 +51,7 @@
         },
         {
           "src": "assets/devices/domikauto/04.jpg",
-          "alt": "Domik Control — the web dashboard"
+          "alt": "Domik Control \u2014 the web dashboard"
         }
       ],
       "hw": [
@@ -108,7 +108,7 @@
           "latest": false,
           "notes": [
             "Data freshness age shown next to the on-screen \"Data:\" timestamp, colour-coded (dim under ~45 s, amber during backoff, red once stalled) so a frozen feed is obvious at a glance.",
-            "Web /api/status now exposes data_ts and data_age_s, and the dashboard shows a matching \"Data: <ts> · <age> ago\" line.",
+            "Web /api/status now exposes data_ts and data_age_s, and the dashboard shows a matching \"Data: <ts> \u00b7 <age> ago\" line.",
             "Disambiguates the two stall causes at last: a small age with a frozen timestamp means HA-side staleness; a large age means a Master/Wi-Fi poll stall."
           ],
           "files": [
@@ -137,7 +137,7 @@
       "tag": "generator RF bridge",
       "desc": "The executing node of DomikAuto: switches a backup generator over 433 MHz OOK (CC1101) and talks to the master over ESP-NOW. Web dashboard, OTA updates, optional TFT status screen.",
       "long": [
-        "DomikAutoSlave is the hand that pulls the lever. It receives commands from DomikAuto over ESP-NOW and translates them into 433 MHz OOK bursts through a CC1101 radio — the same signal the generator's own remote sends.",
+        "DomikAutoSlave is the hand that pulls the lever. It receives commands from DomikAuto over ESP-NOW and translates them into 433 MHz OOK bursts through a CC1101 radio \u2014 the same signal the generator's own remote sends.",
         "It runs standalone too: a small web dashboard lets you fire commands manually, and the optional TFT build shows link state, battery and the last command right on the device."
       ],
       "features": [
@@ -150,7 +150,7 @@
       "photos": [
         {
           "src": "assets/devices/domikautoslave/01.jpg",
-          "alt": "Mounted by the generator — status screen and 433 MHz antenna"
+          "alt": "Mounted by the generator \u2014 status screen and 433 MHz antenna"
         },
         {
           "src": "assets/devices/domikautoslave/02.jpg",
@@ -158,7 +158,7 @@
         },
         {
           "src": "assets/devices/domikautoslave/03.jpg",
-          "alt": "Inside the 3D-printed case — ESP32, CC1101 and the manual override switch"
+          "alt": "Inside the 3D-printed case \u2014 ESP32, CC1101 and the manual override switch"
         }
       ],
       "hw": [
@@ -282,7 +282,7 @@
           "date": "2026-08-14",
           "latest": false,
           "notes": [
-            "[RF] Doubled the default Princeton TX burst duration 1500 ms → 3000 ms",
+            "[RF] Doubled the default Princeton TX burst duration 1500 ms \u2192 3000 ms",
             "[CI] Build workflow (.github/workflows/build.yml)",
             "[CI] Release workflow (.github/workflows/release.yml)"
           ],
@@ -322,9 +322,9 @@
       "vis": "private",
       "icon": "bulb",
       "tag": "addressable LEGO lighting",
-      "desc": "Lighting for LEGO builds — or anything else. Group addressable LEDs into zones, design per-zone animations, and run automatic scenarios by time or sunrise / sunset.",
+      "desc": "Lighting for LEGO builds \u2014 or anything else. Group addressable LEDs into zones, design per-zone animations, and run automatic scenarios by time or sunrise / sunset.",
       "long": [
-        "BricksLights turns a strip of addressable LEDs into lighting for LEGO builds — or for a shelf, a desk, a diorama. Group the LEDs into zones, give every zone its own animation, and control it all from the browser.",
+        "BricksLights turns a strip of addressable LEDs into lighting for LEGO builds \u2014 or for a shelf, a desk, a diorama. Group the LEDs into zones, give every zone its own animation, and control it all from the browser.",
         "Scenarios run on their own: switch scenes by the clock or follow local sunrise and sunset, so the build lights itself up when the room gets dark."
       ],
       "features": [
@@ -341,7 +341,7 @@
         },
         {
           "src": "assets/devices/bricklights/02.jpg",
-          "alt": "The same build by daylight — LEDs hidden inside"
+          "alt": "The same build by daylight \u2014 LEDs hidden inside"
         }
       ],
       "hw": [
@@ -354,7 +354,7 @@
           "date": "2026-08-14",
           "latest": true,
           "notes": [
-            "CI: Automated firmware publishing — tagged releases now build the app, UI (LittleFS) and a full-flash image, and appear on the download site (zuzzza.github.io). No firmware behavior change since 0.3.28."
+            "CI: Automated firmware publishing \u2014 tagged releases now build the app, UI (LittleFS) and a full-flash image, and appear on the download site (zuzzza.github.io). No firmware behavior change since 0.3.28."
           ],
           "files": [
             {
@@ -392,7 +392,7 @@
       "desc": "A presence indicator that pairs with MuteDesk: shows people around me whether I'm on a call or can't talk because my mic is live. Tracks call presence through the MuteDesk API.",
       "long": [
         "OnAIR is a presence light for a home office. It pairs with MuteDesk, tracks whether a call is running and whether the mic is live, and shows the room a clear signal before anyone opens the door.",
-        "The source is public — the firmware and its releases live on GitHub."
+        "The source is public \u2014 the firmware and its releases live on GitHub."
       ],
       "features": [
         "On-call / mic-live presence indication",
@@ -403,7 +403,7 @@
       "photos": [
         {
           "src": "assets/devices/onair/01.jpg",
-          "alt": "Idle — no call in progress"
+          "alt": "Idle \u2014 no call in progress"
         },
         {
           "src": "assets/devices/onair/02.jpg",
@@ -411,7 +411,7 @@
         },
         {
           "src": "assets/devices/onair/03.gif",
-          "alt": "On a call with the mic live — the sign blinks"
+          "alt": "On a call with the mic live \u2014 the sign blinks"
         }
       ],
       "hw": [
@@ -467,7 +467,7 @@
           "date": "2026-08-22",
           "latest": true,
           "notes": [
-            "Three-gauge panel on a 480×320 TFT (src/main.cpp)",
+            "Three-gauge panel on a 480\u00d7320 TFT (src/main.cpp)",
             "Usage read from Claude's own figures",
             "Self-fitting ceilings (host/meter.py)",
             "Menu bar app (mac/ClaudeUsageMeter.swift)",
@@ -483,14 +483,14 @@
               "path": "firmware/claude-usage-meter/v1.0.0/ClaudeUsageMeter_v1.0.0_macos.zip"
             },
             {
-              "board": "Mega · 8-bit shield",
+              "board": "Mega \u00b7 8-bit shield",
               "type": "file",
               "name": "claude-usage-meter_v1.0.0_mega1280.hex",
               "size": "83 KB",
               "path": "firmware/claude-usage-meter/v1.0.0/claude-usage-meter_v1.0.0_mega1280.hex"
             },
             {
-              "board": "Mega · 16-bit shield",
+              "board": "Mega \u00b7 16-bit shield",
               "type": "file",
               "name": "claude-usage-meter_v1.0.0_mega1280_16bit.hex",
               "size": "65 KB",
@@ -498,7 +498,59 @@
             }
           ]
         }
-      ]
+      ],
+      "install": {
+        "title": "How to install and update",
+        "tabs": [
+          {
+            "id": "firmware",
+            "label": "Firmware (USB)",
+            "steps": [
+              "Work out which shield you have. A long board spanning the Mega's double-row header is **Mega-format**; a short one using only the UNO headers is **UNO-format**.",
+              "Download the matching file: `_mega1280_16bit.hex` for Mega-format, `_mega1280.hex` for UNO-format.",
+              {
+                "text": "Connect over USB and flash it. On a Mega 1280:",
+                "code": "avrdude -c arduino -p atmega1280 -b 57600 \\\n  -P /dev/cu.usbserial-XXXX \\\n  -U flash:w:claude-usage-meter_v1.0.0_mega1280_16bit.hex:i"
+              },
+              "On a Mega 2560 use `-p atmega2560 -b 115200` instead.",
+              "The panel shows its splash, then waits for the Mac app. There is no over-the-air path \u2014 the board has no network of its own."
+            ]
+          },
+          {
+            "id": "app",
+            "label": "macOS app",
+            "steps": [
+              {
+                "text": "Install the one dependency the daemon needs:",
+                "code": "python3 -m pip install --user pyserial"
+              },
+              "Download `ClaudeUsageMeter_<ver>_macos.zip`, unzip it, and move the app to `/Applications`.",
+              {
+                "text": "The build is ad-hoc signed and not notarised, so Gatekeeper objects the first time. Right-click \u25b8 **Open**, or clear the quarantine flag:",
+                "code": "xattr -dr com.apple.quarantine /Applications/ClaudeUsageMeter.app"
+              },
+              "Launch it. It appears in the menu bar, starts the daemon, and finds the board on its own.",
+              "To update, quit the app, replace it, and launch again. Settings live in `~/.claude-usage-meter/` and survive."
+            ]
+          },
+          {
+            "id": "source",
+            "label": "From source",
+            "steps": [
+              "Avoids the Gatekeeper prompt entirely and picks the right firmware environment for you.",
+              {
+                "text": "Flash the board:",
+                "code": "pio run -e mega1280_16bit -t upload"
+              },
+              {
+                "text": "Build and launch the app:",
+                "code": "bash mac/build_app.sh && open mac/ClaudeUsageMeter.app"
+              },
+              "See the repository's `docs/` for the display-driver probe if the panel stays white."
+            ]
+          }
+        ]
+      }
     }
   ]
 }

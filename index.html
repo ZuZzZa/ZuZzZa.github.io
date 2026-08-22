@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>Igor Grygorenko · ZuZzZa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Igor Grygorenko (ZuZzZa) — maker of ESP32 devices. Download firmware and update your device." />
+<meta name="description" content="Igor Grygorenko (ZuZzZa) — maker of connected devices. Download firmware and update your device." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%238b5cf6'/%3E%3Cpath d='M7 16l5-5-5-5M13 17h5' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <style>
   :root{
@@ -355,7 +355,7 @@ function homeView(){
     <div class="stats">
       <div class="stat"><div class="n">MSc</div><div class="l">Robotics &amp; AI · KPI</div></div>
       <div class="stat"><div class="n">PM</div><div class="l">delivery lead</div></div>
-      <div class="stat"><div class="n">${DATA.projects.length}</div><div class="l">ESP32 devices</div></div>
+      <div class="stat"><div class="n">${DATA.projects.length}</div><div class="l">devices</div></div>
       <div class="stat"><div class="n">3D</div><div class="l">model &amp; print</div></div>
     </div>
   </section>
@@ -366,7 +366,7 @@ function homeView(){
       return `<span class="sh">${f?`<img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy">`:`<span class="mini">${I[p.icon]||I.chip}</span>`}</span>`;
     }).join('')}</div>
     <div class="t-body">
-      <h3>${DATA.projects.length} ESP32 devices I build</h3>
+      <h3>${DATA.projects.length} devices I build</h3>
       <p>Photos, what each one does, and the firmware to flash it.</p>
       <div class="names">${DATA.projects.map(p=>esc(p.name)).join(' · ')}</div>
     </div>
@@ -474,6 +474,38 @@ function relCard(r){
   return `<article class="release"><div class="r-top"><span class="ver">v${esc(r.version)}</span>${r.latest?'<span class="pill latest"><span class="d"></span>latest</span>':''}<span class="date">${esc(r.date)}</span></div>
     <div class="r-body">${r.notes&&r.notes.length?`<ul>${r.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:''}${files}</div></article>`;
 }
+/* Install instructions. A project may carry its own in data.json as
+   install:{title,tabs:[{id,label,steps:[...]}]}; a step is a string or
+   {text,code}. Text takes a tiny safe subset - `code` and **bold** - applied
+   after escaping. Projects without an install block keep the OTA/full-flash
+   default the ESP32 devices use. */
+function stepList(steps){
+  return `<ol>${(steps||[]).map(s=>{
+    const t=(typeof s==='string')?{text:s}:(s||{});
+    const body=esc(t.text||'')
+      .replace(/`([^`]+)`/g,'<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+    return `<li>${body}${t.code?`<pre class="code">${esc(t.code)}</pre>`:''}</li>`;
+  }).join('')}</ol>`;
+}
+function howto(p){
+  const cfg=p.install&&Array.isArray(p.install.tabs)&&p.install.tabs.length?p.install:null;
+  const title=cfg&&cfg.title?cfg.title:'How to update your device';
+  const tabs=cfg?cfg.tabs:[
+    {id:'ota',label:'Over-the-air',steps:[
+      'Power the device and open its web dashboard.',
+      'Download the **OTA** file for your board (plain `_<board>.bin`).',
+      'Open **Update**, choose the `.bin`, confirm.',
+      'It flashes and reboots itself — keep the power on.']},
+    {id:'full',label:'Full flash (USB)',steps:[
+      'Install `esptool` and connect over USB.',
+      'Download the **FULL** image (`_full.bin`).',
+      {text:'Flash at `0x0`:',code:'esptool.py -p <PORT> write_flash 0x0 <file>_full.bin'},
+      'Reset. Use for new/bricked boards; OTA covers normal updates.']}];
+  return `<div class="howto"><div class="howto-h">${I.up}<h2>${esc(title)}</h2></div>
+    <div class="tabs">${tabs.map((t,i)=>`<button class="tab${i?'':' on'}" data-tab="${esc(t.id)}">${esc(t.label)}</button>`).join('')}</div>
+    <div class="panes">${tabs.map((t,i)=>`<div class="pane${i?'':' on'}" data-pane="${esc(t.id)}">${stepList(t.steps)}</div>`).join('')}</div></div>`;
+}
 function projectView(id){
   const p=DATA.projects.find(x=>x.id===id); if(!p){location.hash='#/firmware';return '';}
   const lr=latestOf(p);
@@ -489,20 +521,7 @@ function projectView(id){
     <div class="p-meta">${badge}<div class="hw">${p.hw.map(h=>`<span class="chip">${esc(h)}</span>`).join('')}</div>
       ${p.vis==='public'&&ghurl?`<a class="ghlink" href="${ghurl}" target="_blank" rel="noopener">${I.gh} source</a>`:''}</div>
   </div></div>
-  <div class="howto"><div class="howto-h">${I.up}<h2>How to update your device</h2></div>
-    <div class="tabs"><button class="tab on" data-tab="ota">Over-the-air</button><button class="tab" data-tab="full">Full flash (USB)</button></div>
-    <div class="panes">
-      <div class="pane on" data-pane="ota"><ol>
-        <li>Power the device and open its web dashboard.</li>
-        <li>Download the <b>OTA</b> file for your board (plain <code>_&lt;board&gt;.bin</code>).</li>
-        <li>Open <b>Update</b>, choose the <code>.bin</code>, confirm.</li>
-        <li>It flashes and reboots itself — keep the power on.</li></ol></div>
-      <div class="pane" data-pane="full"><ol>
-        <li>Install <code>esptool</code> and connect over USB.</li>
-        <li>Download the <b>FULL</b> image (<code>_full.bin</code>).</li>
-        <li>Flash at <code>0x0</code>:<pre class="code">esptool.py -p &lt;PORT&gt; write_flash 0x0 &lt;file&gt;_full.bin</pre></li>
-        <li>Reset. Use for new/bricked boards; OTA covers normal updates.</li></ol></div>
-    </div></div>
+  ${howto(p)}
   <div class="rel-title">// releases</div>${releases}`;
 }
 function setNav(r){document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.r===r));}
