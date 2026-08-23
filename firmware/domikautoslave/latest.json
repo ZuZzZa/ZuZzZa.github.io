@@ -1,15 +1,26 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.2",
   "date": "2026-08-23",
-  "ota": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_esp32wroom32.bin",
-  "ota_sha256": "8627efb9f9d4c3c588cc5204be78917dc2068783601a4c7cc33bb8b4bcca7937",
-  "full": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_esp32wroom32_full.bin",
+  "boards": {
+    "esp32wroom32": {
+      "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32.bin",
+      "ota_sha256": "c64f84223b7ce03d141cf5ebfa0edd73246d3065ce7aad2dc42c8a4e93ebb8ef",
+      "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32_full.bin"
+    },
+    "ttgo-t-display": {
+      "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_ttgo-t-display.bin",
+      "ota_sha256": "ddba913d097b658941bac4742df72fb37f8589ce0c24ddb6bf0597508c23ead1",
+      "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_ttgo-t-display_full.bin"
+    }
+  },
+  "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32.bin",
+  "ota_sha256": "c64f84223b7ce03d141cf5ebfa0edd73246d3065ce7aad2dc42c8a4e93ebb8ef",
+  "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32_full.bin",
   "notes": [
-    "A plain OTA update is enough — panic_info included — crashes are captured in RTC memory, which needs no partition, so nothing has to be flashed over USB.",
-    "Optional: flashing partition-table_<ver>.bin at 0x8000 over USB once adds the coredump partition, which upgrades panic_info with a full backtrace; the layout only gains partitions at the end, so NVS (WiFi credentials, settings) and the installed app are kept — unlike _full.bin, which would wipe them.",
-    "[Diag] Panics are captured without needing any partition",
-    "[OTA] Update straight from the firmware hub",
-    "[Release] The hub sync now also writes firmware/domikautoslave/latest.json",
-    "[Build] CI built against the wrong partition table"
+    "Update over OTA as usual — nothing needs to be flashed over USB.",
+    "The hub manifest is now per board. Until a release is published with this version, latest.json still carries only the flat ota field, which points at the WROOM build.",
+    "[Hub] The manifest could hand a board the wrong firmware",
+    "[API] board in GET /api/status — the build target as",
+    "The Slave's own hub check now reads boards[<its board>] and refuses a"
   ]
 }
