@@ -1,26 +1,26 @@
 {
-  "version": "1.7.2",
+  "version": "1.7.3",
   "date": "2026-08-23",
   "boards": {
     "esp32wroom32": {
-      "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32.bin",
-      "ota_sha256": "c64f84223b7ce03d141cf5ebfa0edd73246d3065ce7aad2dc42c8a4e93ebb8ef",
-      "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32_full.bin"
+      "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32.bin",
+      "ota_sha256": "e976aa72a072d47b78afb36466dca11678b295aefe0e512eea0f8d672c212d28",
+      "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32_full.bin"
     },
     "ttgo-t-display": {
-      "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_ttgo-t-display.bin",
-      "ota_sha256": "ddba913d097b658941bac4742df72fb37f8589ce0c24ddb6bf0597508c23ead1",
-      "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_ttgo-t-display_full.bin"
+      "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_ttgo-t-display.bin",
+      "ota_sha256": "8c6a8476215b56ed8d01c2ba1494ec9bfb54416cbaa5bd189b8650ad13c686de",
+      "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_ttgo-t-display_full.bin"
     }
   },
-  "ota": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32.bin",
-  "ota_sha256": "c64f84223b7ce03d141cf5ebfa0edd73246d3065ce7aad2dc42c8a4e93ebb8ef",
-  "full": "firmware/domikautoslave/v1.7.2/slave_v1.7.2_esp32wroom32_full.bin",
+  "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32.bin",
+  "ota_sha256": "e976aa72a072d47b78afb36466dca11678b295aefe0e512eea0f8d672c212d28",
+  "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32_full.bin",
   "notes": [
     "Update over OTA as usual — nothing needs to be flashed over USB.",
-    "The hub manifest is now per board. Until a release is published with this version, latest.json still carries only the flat ota field, which points at the WROOM build.",
-    "[Hub] The manifest could hand a board the wrong firmware",
-    "[API] board in GET /api/status — the build target as",
-    "The Slave's own hub check now reads boards[<its board>] and refuses a"
+    "This is the version that can actually read the current hub manifest. On 1.7.2 \"Перевірити оновлення\" answers malformed manifest, so this one still has to be installed by hand; from here on the hub button works.",
+    "[Hub] \"Перевірити оновлення\" failed with malformed manifest (web_server.c) The manifest is fetched into a fixed buffer that was 1024 bytes, but with the per-board section added in 1.7.2 the real file is ~1.3 KB. The body was cut at 1023…",
+    "[Hub] Release notes were cut off mid-sentence (.github/scripts/sync-hub.js) Only the first line of each CHANGELOG bullet was taken, but bullets wrap over several lines, so the published notes ended like \"…the build target as\".…",
+    "[CI] sync-hub.yml now fails clearly when no tag is supplied, instead of running gh release download \"\"."
   ]
 }
