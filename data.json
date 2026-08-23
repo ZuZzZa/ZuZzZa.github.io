@@ -167,9 +167,54 @@
       ],
       "releases": [
         {
+          "version": "1.7.0",
+          "date": "2026-08-23",
+          "latest": true,
+          "notes": [
+            "A plain OTA update is enough — panic_info included — crashes are captured in RTC memory, which needs no partition, so nothing has to be flashed over USB.",
+            "Optional: flashing partition-table_<ver>.bin at 0x8000 over USB once adds the coredump partition, which upgrades panic_info with a full backtrace; the layout only gains partitions at the end, so NVS (WiFi credentials, settings) and the installed app are kept — unlike _full.bin, which would wipe them.",
+            "[Diag] Panics are captured without needing any partition",
+            "[OTA] Update straight from the firmware hub",
+            "[Release] The hub sync now also writes firmware/domikautoslave/latest.json",
+            "[Build] CI built against the wrong partition table"
+          ],
+          "files": [
+            {
+              "board": "",
+              "type": "ota",
+              "name": "partition-table_v1.7.0.bin",
+              "path": "firmware/domikautoslave/v1.7.0/partition-table_v1.7.0.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.7.0_esp32wroom32.bin",
+              "path": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_esp32wroom32.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.7.0_esp32wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_esp32wroom32_full.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.7.0_ttgo-t-display.bin",
+              "path": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_ttgo-t-display.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.7.0_ttgo-t-display_full.bin",
+              "path": "firmware/domikautoslave/v1.7.0/slave_v1.7.0_ttgo-t-display_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.6.2",
           "date": "2026-08-17",
-          "latest": true,
+          "latest": false,
           "notes": [
             "**[API] POST /api/cmd/rf no longer answers 200 when nothing is",
             "[API] dur_ms is now validated; allowed maximum raised to 5000 ms",
