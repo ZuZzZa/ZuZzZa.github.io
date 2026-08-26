@@ -167,9 +167,54 @@
       ],
       "releases": [
         {
+          "version": "1.7.4",
+          "date": "2026-08-26",
+          "latest": true,
+          "notes": [
+            "Update over OTA as usual — nothing needs to be flashed over USB.",
+            "Panic records written by 1.7.3 and earlier are not carried over: the RTC record gained fields, so its magic changed and any pending old record is ignored. The last panic already stored in NVS is still reported.",
+            "hello task ran on a 2048-byte stack (main.c) Every other task in the firmware has 3072 or more, while hello calls into esp_now_send() and formats a log line through vsnprintf() on each pass — the thinnest margin in the firmware, in the…",
+            "Uptime in panic_info is now always seconds with a trailing s (panic_rtc.c) Every record — RTC or core dump — is formatted with the same fields in the same order, and a field with nothing behind it reads ? rather than being left out.",
+            "Our own ESP-NOW calls are now serialised (espnow_comm.c) hello_task, status_task and the receive task reach the driver independently — two of them sending while the third registers a peer from the on_message callback. The driver is…",
+            "panic_info now records a backtrace, stack pointer, free stack and panic reason (panic_rtc.c) The PC alone was not enough: six field panics all reported PC=0x4008a9e8 cause=IllegalInstruction task=hello, which decodes to xQueueGenericSend…"
+          ],
+          "files": [
+            {
+              "board": "",
+              "type": "ota",
+              "name": "partition-table_v1.7.4.bin",
+              "path": "firmware/domikautoslave/v1.7.4/partition-table_v1.7.4.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "ota",
+              "name": "slave_v1.7.4_esp32wroom32.bin",
+              "path": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32.bin"
+            },
+            {
+              "board": "ESP32-WROOM-32",
+              "type": "full",
+              "name": "slave_v1.7.4_esp32wroom32_full.bin",
+              "path": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32_full.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "ota",
+              "name": "slave_v1.7.4_ttgo-t-display.bin",
+              "path": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_ttgo-t-display.bin"
+            },
+            {
+              "board": "TTGO T-Display",
+              "type": "full",
+              "name": "slave_v1.7.4_ttgo-t-display_full.bin",
+              "path": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_ttgo-t-display_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.7.3",
           "date": "2026-08-23",
-          "latest": true,
+          "latest": false,
           "notes": [
             "Update over OTA as usual — nothing needs to be flashed over USB.",
             "This is the version that can actually read the current hub manifest. On 1.7.2 \"Перевірити оновлення\" answers malformed manifest, so this one still has to be installed by hand; from here on the hub button works.",

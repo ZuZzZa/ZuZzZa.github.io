@@ -1,26 +1,27 @@
 {
-  "version": "1.7.3",
-  "date": "2026-08-23",
+  "version": "1.7.4",
+  "date": "2026-08-26",
   "boards": {
     "esp32wroom32": {
-      "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32.bin",
-      "ota_sha256": "e976aa72a072d47b78afb36466dca11678b295aefe0e512eea0f8d672c212d28",
-      "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32_full.bin"
+      "ota": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32.bin",
+      "ota_sha256": "061c98b10a6cb10afdede319c5f55854bcb2d089bf1115c82ec96015e5f70899",
+      "full": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32_full.bin"
     },
     "ttgo-t-display": {
-      "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_ttgo-t-display.bin",
-      "ota_sha256": "8c6a8476215b56ed8d01c2ba1494ec9bfb54416cbaa5bd189b8650ad13c686de",
-      "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_ttgo-t-display_full.bin"
+      "ota": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_ttgo-t-display.bin",
+      "ota_sha256": "bf0ad221ac670bf9a5a31ecec91d8eb807ae05388bde2e5ea16d1c0482827957",
+      "full": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_ttgo-t-display_full.bin"
     }
   },
-  "ota": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32.bin",
-  "ota_sha256": "e976aa72a072d47b78afb36466dca11678b295aefe0e512eea0f8d672c212d28",
-  "full": "firmware/domikautoslave/v1.7.3/slave_v1.7.3_esp32wroom32_full.bin",
+  "ota": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32.bin",
+  "ota_sha256": "061c98b10a6cb10afdede319c5f55854bcb2d089bf1115c82ec96015e5f70899",
+  "full": "firmware/domikautoslave/v1.7.4/slave_v1.7.4_esp32wroom32_full.bin",
   "notes": [
     "Update over OTA as usual — nothing needs to be flashed over USB.",
-    "This is the version that can actually read the current hub manifest. On 1.7.2 \"Перевірити оновлення\" answers malformed manifest, so this one still has to be installed by hand; from here on the hub button works.",
-    "[Hub] \"Перевірити оновлення\" failed with malformed manifest (web_server.c) The manifest is fetched into a fixed buffer that was 1024 bytes, but with the per-board section added in 1.7.2 the real file is ~1.3 KB. The body was cut at 1023…",
-    "[Hub] Release notes were cut off mid-sentence (.github/scripts/sync-hub.js) Only the first line of each CHANGELOG bullet was taken, but bullets wrap over several lines, so the published notes ended like \"…the build target as\".…",
-    "[CI] sync-hub.yml now fails clearly when no tag is supplied, instead of running gh release download \"\"."
+    "Panic records written by 1.7.3 and earlier are not carried over: the RTC record gained fields, so its magic changed and any pending old record is ignored. The last panic already stored in NVS is still reported.",
+    "hello task ran on a 2048-byte stack (main.c) Every other task in the firmware has 3072 or more, while hello calls into esp_now_send() and formats a log line through vsnprintf() on each pass — the thinnest margin in the firmware, in the…",
+    "Uptime in panic_info is now always seconds with a trailing s (panic_rtc.c) Every record — RTC or core dump — is formatted with the same fields in the same order, and a field with nothing behind it reads ? rather than being left out.",
+    "Our own ESP-NOW calls are now serialised (espnow_comm.c) hello_task, status_task and the receive task reach the driver independently — two of them sending while the third registers a peer from the on_message callback. The driver is…",
+    "panic_info now records a backtrace, stack pointer, free stack and panic reason (panic_rtc.c) The PC alone was not enough: six field panics all reported PC=0x4008a9e8 cause=IllegalInstruction task=hello, which decodes to xQueueGenericSend…"
   ]
 }
