@@ -596,9 +596,45 @@
       ],
       "releases": [
         {
+          "version": "1.2.0",
+          "date": "2026-08-26",
+          "latest": true,
+          "notes": [
+            "Green DONE blink when Claude finishes, red kept for when it is stuck",
+            "Weekly rows show the reset as a date rather than a countdown",
+            "Usage from the phone and elsewhere is counted",
+            "A 3D-printable lid that fits, in case/",
+            "One click acknowledges the attention blink, on the press rather than the release",
+            "tools/install_token_keeper.sh sets the credential keeper up on any machine"
+          ],
+          "files": [
+            {
+              "board": "macOS app",
+              "type": "file",
+              "name": "ClaudeUsageMeter_v1.2.0_macos.zip",
+              "size": "299 KB",
+              "path": "firmware/claude-usage-meter/v1.2.0/ClaudeUsageMeter_v1.2.0_macos.zip"
+            },
+            {
+              "board": "Mega · 8-bit shield",
+              "type": "file",
+              "name": "claude-usage-meter_v1.2.0_mega1280.hex",
+              "size": "91 KB",
+              "path": "firmware/claude-usage-meter/v1.2.0/claude-usage-meter_v1.2.0_mega1280.hex"
+            },
+            {
+              "board": "Mega · 16-bit shield",
+              "type": "file",
+              "name": "claude-usage-meter_v1.2.0_mega1280_16bit.hex",
+              "size": "73 KB",
+              "path": "firmware/claude-usage-meter/v1.2.0/claude-usage-meter_v1.2.0_mega1280_16bit.hex"
+            }
+          ]
+        },
+        {
           "version": "1.1.0",
           "date": "2026-08-22",
-          "latest": true,
+          "latest": false,
           "notes": [
             "A history page: seven local days of spend",
             "Week pace, as a fourth stat cell",
