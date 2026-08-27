@@ -59,9 +59,31 @@
       ],
       "releases": [
         {
-          "version": "1.7.0",
+          "version": "1.7.1",
           "date": "2026-08-27",
           "latest": true,
+          "notes": [
+            "\"Task create failed\" on the hub \"Оновити Master зараз\" button (field"
+          ],
+          "files": [
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "ota",
+              "name": "master_v1.7.1_s3.bin",
+              "path": "firmware/domikauto/v1.7.1/master_v1.7.1_s3.bin"
+            },
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "full",
+              "name": "master_v1.7.1_s3_full.bin",
+              "path": "firmware/domikauto/v1.7.1/master_v1.7.1_s3_full.bin"
+            }
+          ]
+        },
+        {
+          "version": "1.7.0",
+          "date": "2026-08-27",
+          "latest": false,
           "notes": [
             "Firmware Hub self-update for Master AND Slave from the web admin: check button, \"Оновити зараз\" only when a newer version exists, daily background check with a one-time Telegram notification per version, hard lock-out while a generator/charge run is active.",
             "Redesigned on-device LVGL interface (ui_theme design system) and themed web UI; LVGL heap, mbedtls and background task stacks moved to PSRAM — web server and Telegram now survive together.",

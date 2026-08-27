@@ -1,15 +1,10 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.1",
   "date": "2026-08-27",
-  "ota": "firmware/domikauto/v1.7.0/master_v1.7.0_s3.bin",
-  "ota_sha256": "578918373731912f4cc7d20192b257368a7bf3ff781e4adad693094063b0d5ae",
-  "full": "firmware/domikauto/v1.7.0/master_v1.7.0_s3_full.bin",
+  "ota": "firmware/domikauto/v1.7.1/master_v1.7.1_s3.bin",
+  "ota_sha256": "d9c4d81bceeb7cf0ed7f789f97c84845510506b64f8508274fb5f064d872d742",
+  "full": "firmware/domikauto/v1.7.1/master_v1.7.1_s3_full.bin",
   "notes": [
-    "Firmware Hub self-update for Master AND Slave from the web admin: check button, \"Оновити зараз\" only when a newer version exists, daily background check with a one-time Telegram notification per version, hard lock-out while a generator/charge run is active.",
-    "Redesigned on-device LVGL interface (ui_theme design system) and themed web UI; LVGL heap, mbedtls and background task stacks moved to PSRAM — web server and Telegram now survive together.",
-    "Grid presence is resolved ONLY from the external Slave sensor when its rule is enabled (the inverter API lies while the generator runs); per-field persistence of every automation setting.",
-    "OTA safety: accidental-downgrade guard with explicit rollback checkbox, wrong-device and non-app image rejection, real version embedded in the app descriptor; board-aware Slave updates (boards{} manifest, no cross-board offers).",
-    "Reliability: SSR auto-restore after Slave reboot, RF command repeats with honest Slave-side status, Telegram anomaly-alert debounce, Slave crash surfacing (reset_reason + panic_info with backtrace) in the event log.",
-    "Optional SD-card logging (event log + metrics CSV); device works fully without a card."
+    "\"Task create failed\" on the hub \"Оновити Master зараз\" button (field"
   ]
 }
