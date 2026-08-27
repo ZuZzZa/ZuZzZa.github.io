@@ -59,9 +59,31 @@
       ],
       "releases": [
         {
+          "version": "1.7.0",
+          "date": "2026-08-27",
+          "latest": true,
+          "notes": [
+            "See the release notes on GitHub."
+          ],
+          "files": [
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "ota",
+              "name": "master_v1.7.0_s3.bin",
+              "path": "firmware/domikauto/v1.7.0/master_v1.7.0_s3.bin"
+            },
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "full",
+              "name": "master_v1.7.0_s3_full.bin",
+              "path": "firmware/domikauto/v1.7.0/master_v1.7.0_s3_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.6.0",
           "date": "2026-08-16",
-          "latest": true,
+          "latest": false,
           "notes": [
             "See the release notes on GitHub."
           ],
