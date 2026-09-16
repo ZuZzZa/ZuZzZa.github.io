@@ -1,10 +1,10 @@
 {
-  "version": "1.7.1",
-  "date": "2026-08-27",
-  "ota": "firmware/domikauto/v1.7.1/master_v1.7.1_s3.bin",
-  "ota_sha256": "d9c4d81bceeb7cf0ed7f789f97c84845510506b64f8508274fb5f064d872d742",
-  "full": "firmware/domikauto/v1.7.1/master_v1.7.1_s3_full.bin",
+  "version": "1.8.6",
+  "date": "2026-09-16",
+  "ota": "firmware/domikauto/v1.8.6/master_v1.8.6_s3.bin",
+  "ota_sha256": "9bb63c1c2b79da317a824c5f6e894c5985186d7936d6d5cb969affd6b4d33dc9",
+  "full": "firmware/domikauto/v1.8.6/master_v1.8.6_s3_full.bin",
   "notes": [
-    "\"Task create failed\" on the hub \"Оновити Master зараз\" button (field"
+    "Announce tug-of-war on HA recovery shortened from ~25 s to seconds"
   ]
 }

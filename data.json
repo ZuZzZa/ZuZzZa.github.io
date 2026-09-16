@@ -59,9 +59,31 @@
       ],
       "releases": [
         {
+          "version": "1.8.6",
+          "date": "2026-09-16",
+          "latest": true,
+          "notes": [
+            "Announce tug-of-war on HA recovery shortened from ~25 s to seconds"
+          ],
+          "files": [
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "ota",
+              "name": "master_v1.8.6_s3.bin",
+              "path": "firmware/domikauto/v1.8.6/master_v1.8.6_s3.bin"
+            },
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "full",
+              "name": "master_v1.8.6_s3_full.bin",
+              "path": "firmware/domikauto/v1.8.6/master_v1.8.6_s3_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.7.1",
           "date": "2026-08-27",
-          "latest": true,
+          "latest": false,
           "notes": [
             "\"Task create failed\" on the hub \"Оновити Master зараз\" button (field"
           ],
