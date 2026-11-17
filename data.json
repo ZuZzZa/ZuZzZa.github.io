@@ -59,9 +59,36 @@
       ],
       "releases": [
         {
+          "version": "1.10.0",
+          "date": "2026-11-17",
+          "latest": true,
+          "notes": [
+            "Intelligent mode: an AUTO charge stops once the outage schedule says the battery will reach the grid; the late-grid buffer is a setting (default 15 min)",
+            "DTEK outage schedule and night plan in Telegram: charge goal, latest generator start, quiet-hours outlook",
+            "Quiet hours: emergency charge to 35% with no second start near their end; new /quiet and /skipnight commands",
+            "Charge current follows the source (20 A generator, 40 A grid) and is retried until the inverter confirms it",
+            "Fuel pump pressed once per generator run; grid-sensor glitches under generator load are vetoed by the meter",
+            "CI host tests build on Linux again (no firmware change)"
+          ],
+          "files": [
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "ota",
+              "name": "master_v1.10.0_s3.bin",
+              "path": "firmware/domikauto/v1.10.0/master_v1.10.0_s3.bin"
+            },
+            {
+              "board": "ESP32-S3-Touch-LCD-7",
+              "type": "full",
+              "name": "master_v1.10.0_s3_full.bin",
+              "path": "firmware/domikauto/v1.10.0/master_v1.10.0_s3_full.bin"
+            }
+          ]
+        },
+        {
           "version": "1.8.6",
           "date": "2026-09-16",
-          "latest": true,
+          "latest": false,
           "notes": [
             "Announce tug-of-war on HA recovery shortened from ~25 s to seconds"
           ],
